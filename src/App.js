@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import RasmTahlil from './RasmTahlil';
 import './App.css';
 
-const API = 'http://localhost:8000';
-
+const API = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 const MATERIALLAR = [
   { id: 'kafel', nom: 'Kafel', icon: '🟦', endpoint: '/hisob/kafel' },
   { id: 'oboy', nom: 'Oboy', icon: '📜', endpoint: '/hisob/oboy' },
