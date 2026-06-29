@@ -189,11 +189,11 @@ export default function App() {
         <div className="hero-title">Xona remont hisobini boshlang</div>
         <div className="hero-sub">Materiallar, narxlar va AI dizayn maslahati — barchasi bir joyda</div>
         <div className="hero-chips">
-          <span className="hero-chip aktiv">📊 Hisob-kitob</span>
-          <span className="hero-chip">✨ AI maslahat</span>
-          <span className="hero-chip">📄 PDF smeta</span>
-          <span className="hero-chip">💰 Narxlar</span>
-        </div>
+  <span className="hero-chip aktiv" onClick={() => document.querySelector('.karta').scrollIntoView({behavior:'smooth'})}>📊 Hisob-kitob</span>
+  <span className="hero-chip" onClick={() => document.querySelector('.ai-blok').scrollIntoView({behavior:'smooth'})}>✨ AI maslahat</span>
+  <span className="hero-chip" onClick={() => document.querySelector('.pdf-btn')?.scrollIntoView({behavior:'smooth'})}>📄 PDF smeta</span>
+  <span className="hero-chip" onClick={() => document.querySelector('.natija-narx')?.scrollIntoView({behavior:'smooth'})}>💰 Narxlar</span>
+</div>
       </div>
 
       <div className="karta">
