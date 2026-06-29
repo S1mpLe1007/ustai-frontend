@@ -83,8 +83,8 @@ function NatijaKarta({ material, natija }) {
     </div>
   );
 
-    </div>
-  );
+   
+  
 }
 
 function AiBlok({ xona }) {
