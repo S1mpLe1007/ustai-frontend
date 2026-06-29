@@ -34,12 +34,27 @@ const NARX = ['jami_material'];
 const SKIP = ['list_narxi', 'ud_profil_narxi', 'cd_profil_narxi', 'laminat_narxi', 'podlozka_narxi'];
 
 function NatijaKarta({ material, natija }) {
+  const [nusxalandi, setNusxalandi] = useState(false);
+  
+  const nusxaOl = () => {
+    const matn = Object.entries(natija)
+      .filter(([k]) => !SKIP.includes(k))
+      .map(([k, v]) => `${KEY_MAP[k] || k}: ${v}`)
+      .join('\n');
+    navigator.clipboard.writeText(`${material.nom}\n${matn}`);
+    setNusxalandi(true);
+    setTimeout(() => setNusxalandi(false), 2000);
+  };
+
   const entries = Object.entries(natija).filter(([k]) => !SKIP.includes(k));
   return (
     <div className="natija-karta">
       <div className="natija-karta-bosh">
         <span>{material.icon}</span>
         {material.nom}
+        <button className="nusxa-btn" onClick={nusxaOl}>
+          {nusxalandi ? '✅' : '📋'}
+        </button>
       </div>
       {entries.map(([key, val]) => {
         if (NARX.includes(key)) {
@@ -65,6 +80,9 @@ function NatijaKarta({ material, natija }) {
           </div>
         );
       })}
+    </div>
+  );
+})}
     </div>
   );
 }
