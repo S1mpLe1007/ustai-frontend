@@ -82,7 +82,7 @@ function NatijaKarta({ material, natija }) {
       })}
     </div>
   );
-})}
+
     </div>
   );
 }
