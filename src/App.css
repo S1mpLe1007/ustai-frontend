@@ -340,3 +340,87 @@ body {
   .hero-chips { gap: 6px; }
   .hero-chip { font-size: 11px; padding: 4px 9px; }
 }
+/* ========== ANIMATSIYALAR ========== */
+
+/* 1. SAHIFA OCHILGANDA FADE-IN */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.topbar  { animation: fadeInUp 0.4s ease both; animation-delay: 0.05s; }
+.hero    { animation: fadeInUp 0.4s ease both; animation-delay: 0.15s; }
+.karta   { animation: fadeInUp 0.4s ease both; animation-delay: 0.25s; }
+.ai-blok { animation: fadeInUp 0.4s ease both; animation-delay: 0.35s; }
+.amallar { animation: fadeInUp 0.4s ease both; animation-delay: 0.45s; }
+
+/* 2. HISOBLASH TUGMASIDA LOADING SPINNER */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hisobla-btn.yuklanyapti {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+.hisobla-btn.yuklanyapti::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border: 2.5px solid #1a2f4e;
+  border-top-color: transparent;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.7s linear infinite;
+}
+
+.ai-btn.yuklanyapti {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+.ai-btn.yuklanyapti::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border: 2.5px solid #1a2f4e;
+  border-top-color: transparent;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.7s linear infinite;
+}
+
+/* 3. NATIJA CHIQGANDA SLIDE-UP */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.natija-karta {
+  animation: slideUp 0.35s ease both;
+}
+.natija-karta:nth-child(1) { animation-delay: 0.05s; }
+.natija-karta:nth-child(2) { animation-delay: 0.12s; }
+.natija-karta:nth-child(3) { animation-delay: 0.19s; }
+.natija-karta:nth-child(4) { animation-delay: 0.26s; }
+
+/* Material tugma tanlanganda pulse */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.mat-tugma.tanlangan {
+  animation: pulse 0.25s ease;
+}
+
+/* Reduced motion — qurilmada animatsiya o'chirilgan bo'lsa */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
