@@ -216,6 +216,22 @@ const darkToggle = () => {
 
   return (
     <div className="app">
+    <div className="progress-bar">
+  <div className={`progress-qadam ${true ? 'aktiv' : ''}`}>
+    <div className="progress-raqam">01</div>
+    <span>O'lcham</span>
+  </div>
+  <div className="progress-chiziq"></div>
+  <div className={`progress-qadam ${Object.keys(natijalar).length > 0 || yuklanmoqda ? 'aktiv' : ''}`}>
+    <div className="progress-raqam">02</div>
+    <span>Material</span>
+  </div>
+  <div className="progress-chiziq"></div>
+  <div className={`progress-qadam ${Object.keys(natijalar).length > 0 ? 'aktiv' : ''}`}>
+    <div className="progress-raqam">03</div>
+    <span>Natija</span>
+  </div>
+</div>
       <div className="topbar">
         <div className="logo">
           <div className="logo-icon">🏗️</div>
