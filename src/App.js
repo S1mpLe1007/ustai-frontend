@@ -250,7 +250,27 @@ export default function App() {
       </div>
 
       {xato && <div className="xato">⚠️ {xato}</div>}
-
+{yuklanmoqda && (
+  <div>
+    <div className="natija-header">
+      <div className="karta-bosh" style={{marginBottom:0}}>
+        <div className="step-raqam">03</div>
+        <span className="karta-sarlavha">Hisoblanmoqda...</span>
+      </div>
+    </div>
+    <div className="natija-grid">
+      {[1,2].map(i => (
+        <div key={i} className="skeleton-karta">
+          <div className="skeleton skeleton-title"></div>
+          <div className="skeleton skeleton-qator"></div>
+          <div className="skeleton skeleton-qator kalta"></div>
+          <div className="skeleton skeleton-qator"></div>
+          <div className="skeleton skeleton-muhim"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
       {Object.keys(natijalar).length > 0 && (
         <div>
           <div className="natija-header">
