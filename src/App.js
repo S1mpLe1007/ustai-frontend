@@ -35,7 +35,7 @@ const SKIP = ['list_narxi', 'ud_profil_narxi', 'cd_profil_narxi', 'laminat_narxi
 
 function NatijaKarta({ material, natija }) {
   const [nusxalandi, setNusxalandi] = useState(false);
-  
+
   const nusxaOl = () => {
     const matn = Object.entries(natija)
       .filter(([k]) => !SKIP.includes(k))
@@ -47,6 +47,7 @@ function NatijaKarta({ material, natija }) {
   };
 
   const entries = Object.entries(natija).filter(([k]) => !SKIP.includes(k));
+
   return (
     <div className="natija-karta">
       <div className="natija-karta-bosh">
@@ -82,9 +83,6 @@ function NatijaKarta({ material, natija }) {
       })}
     </div>
   );
-
-   
-  
 }
 
 function AiBlok({ xona }) {
@@ -117,20 +115,22 @@ function AiBlok({ xona }) {
       </div>
       <p className="ai-sub">Xona o'lchamlariga mos professional tavsiyalar oling</p>
       <div className="ai-sozlamalar">
-        <div><label>Xona turi</label>
+        <div>
+          <label>Xona turi</label>
           <select value={xonaTuri} onChange={e => setXonaTuri(e.target.value)}>
             {XONA_TURLARI.map(t => <option key={t} value={t}>{t}</option>)}
           </select>
         </div>
-        <div><label>Dizayn uslubi</label>
+        <div>
+          <label>Dizayn uslubi</label>
           <select value={uslub} onChange={e => setUslub(e.target.value)}>
             {USLUBLAR.map(u => <option key={u} value={u}>{u}</option>)}
           </select>
         </div>
       </div>
-     <button className={`ai-btn ${yuklanmoqda ? 'yuklanyapti' : ''}`} onClick={maslahatOl} disabled={yuklanmoqda}>
-  {yuklanmoqda ? '' : '✨ AI maslahat olish'}
-</button>  
+      <button className={`ai-btn ${yuklanmoqda ? 'yuklanyapti' : ''}`} onClick={maslahatOl} disabled={yuklanmoqda}>
+        {yuklanmoqda ? '' : '✨ AI maslahat olish'}
+      </button>
       {xato && <div style={{marginTop:'10px',color:'#fca5a5',fontSize:'13px'}}>⚠️ {xato}</div>}
       {maslahat && (
         <div className="ai-natija">
@@ -207,11 +207,11 @@ export default function App() {
         <div className="hero-title">Xona remont hisobini boshlang</div>
         <div className="hero-sub">Materiallar, narxlar va AI dizayn maslahati — barchasi bir joyda</div>
         <div className="hero-chips">
-  <span className="hero-chip aktiv" onClick={() => document.querySelector('.karta').scrollIntoView({behavior:'smooth'})}>📊 Hisob-kitob</span>
-  <span className="hero-chip" onClick={() => document.querySelector('.ai-blok').scrollIntoView({behavior:'smooth'})}>✨ AI maslahat</span>
-  <span className="hero-chip" onClick={() => document.querySelector('.pdf-btn')?.scrollIntoView({behavior:'smooth'})}>📄 PDF smeta</span>
-  <span className="hero-chip" onClick={() => document.querySelector('.natija-narx')?.scrollIntoView({behavior:'smooth'})}>💰 Narxlar</span>
-</div>
+          <span className="hero-chip aktiv" onClick={() => document.querySelector('.karta').scrollIntoView({behavior:'smooth'})}>📊 Hisob-kitob</span>
+          <span className="hero-chip" onClick={() => document.querySelector('.ai-blok').scrollIntoView({behavior:'smooth'})}>✨ AI maslahat</span>
+          <span className="hero-chip" onClick={() => document.querySelector('.pdf-btn')?.scrollIntoView({behavior:'smooth'})}>📄 PDF smeta</span>
+          <span className="hero-chip" onClick={() => document.querySelector('.natija-narx')?.scrollIntoView({behavior:'smooth'})}>💰 Narxlar</span>
+        </div>
       </div>
 
       <div className="karta">
@@ -263,32 +263,34 @@ export default function App() {
 
       <div className="amallar">
         <button className={`hisobla-btn ${yuklanmoqda ? 'yuklanyapti' : ''}`} onClick={hisobla} disabled={yuklanmoqda || tanlananSoni === 0}>
-  {yuklanmoqda ? '' : `🔢 Hisoblash (${tanlananSoni} material)`}
-</button>
+          {yuklanmoqda ? '' : `🔢 Hisoblash (${tanlananSoni} material)`}
+        </button>
       </div>
 
       {xato && <div className="xato">⚠️ {xato}</div>}
-{yuklanmoqda && (
-  <div>
-    <div className="natija-header">
-      <div className="karta-bosh" style={{marginBottom:0}}>
-        <div className="step-raqam">03</div>
-        <span className="karta-sarlavha">Hisoblanmoqda...</span>
-      </div>
-    </div>
-    <div className="natija-grid">
-      {[1,2].map(i => (
-        <div key={i} className="skeleton-karta">
-          <div className="skeleton skeleton-title"></div>
-          <div className="skeleton skeleton-qator"></div>
-          <div className="skeleton skeleton-qator kalta"></div>
-          <div className="skeleton skeleton-qator"></div>
-          <div className="skeleton skeleton-muhim"></div>
+
+      {yuklanmoqda && (
+        <div>
+          <div className="natija-header">
+            <div className="karta-bosh" style={{marginBottom:0}}>
+              <div className="step-raqam">03</div>
+              <span className="karta-sarlavha">Hisoblanmoqda...</span>
+            </div>
+          </div>
+          <div className="natija-grid">
+            {[1,2].map(i => (
+              <div key={i} className="skeleton-karta">
+                <div className="skeleton skeleton-title"></div>
+                <div className="skeleton skeleton-qator"></div>
+                <div className="skeleton skeleton-qator kalta"></div>
+                <div className="skeleton skeleton-qator"></div>
+                <div className="skeleton skeleton-muhim"></div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-)}
+      )}
+
       {Object.keys(natijalar).length > 0 && (
         <div>
           <div className="natija-header">
