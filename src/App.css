@@ -485,3 +485,18 @@ body {
 .skeleton-qator { height: 12px; width: 100%; margin-bottom: 10px; }
 .skeleton-qator.kalta { width: 70%; }
 .skeleton-muhim { height: 36px; width: 100%; margin-top: 8px; border-radius: 7px; }
+/* NUSXA TUGMASI */
+.nusxa-btn {
+  margin-left: auto;
+  background: none;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nusxa-btn:hover {
+  background: #f0ede8;
+  border-color: #1a2f4e;
+}
