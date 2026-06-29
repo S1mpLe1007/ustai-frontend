@@ -424,3 +424,38 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+/* ========== HOVER EFFEKTLAR ========== */
+
+/* Hisoblash tugmasi */
+.hisobla-btn:hover:not(:disabled) {
+  background: #ffc93c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 165, 0, 0.35);
+}
+
+/* AI tugmasi */
+.ai-btn:hover:not(:disabled) {
+  background: #ffc93c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 165, 0, 0.35);
+}
+
+/* PDF tugmasi */
+.pdf-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+}
+
+/* Material tugmalari */
+.mat-tugma:hover:not(.tanlangan) {
+  background: #eef2f7;
+  border-color: #1a2f4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 47, 78, 0.12);
+}
+
+/* Transition barchaga */
+.hisobla-btn, .ai-btn, .pdf-btn, .mat-tugma {
+  transition: all 0.18s ease;
+}
