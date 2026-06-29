@@ -155,7 +155,12 @@ export default function App() {
   const [yuklanmoqda, setYuklanmoqda] = useState(false);
   const [xato, setXato] = useState('');
   const [mijozIsmi, setMijozIsmi] = useState('');
+const [darkMode, setDarkMode] = useState(false);
 
+const darkToggle = () => {
+  setDarkMode(!darkMode);
+  document.body.classList.toggle('dark');
+};
   const xonaOzgartir = e => setXona({ ...xona, [e.target.name]: parseFloat(e.target.value) || 0 });
   const materialTanla = id => setTanlangan({ ...tanlangan, [id]: !tanlangan[id] });
 
