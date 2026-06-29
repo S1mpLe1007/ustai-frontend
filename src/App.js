@@ -110,9 +110,9 @@ function AiBlok({ xona }) {
           </select>
         </div>
       </div>
-      <button className="ai-btn" onClick={maslahatOl} disabled={yuklanmoqda}>
-        {yuklanmoqda ? '🤖 AI o\'ylayapti...' : '✨ AI maslahat olish'}
-      </button>
+     <button className={`ai-btn ${yuklanmoqda ? 'yuklanyapti' : ''}`} onClick={maslahatOl} disabled={yuklanmoqda}>
+  {yuklanmoqda ? '' : '✨ AI maslahat olish'}
+</button>  
       {xato && <div style={{marginTop:'10px',color:'#fca5a5',fontSize:'13px'}}>⚠️ {xato}</div>}
       {maslahat && (
         <div className="ai-natija">
@@ -244,9 +244,9 @@ export default function App() {
       </div>
 
       <div className="amallar">
-        <button className="hisobla-btn" onClick={hisobla} disabled={yuklanmoqda || tanlananSoni === 0}>
-          {yuklanmoqda ? '⏳ Hisoblanmoqda...' : `🔢 Hisoblash (${tanlananSoni} material)`}
-        </button>
+        <button className={`hisobla-btn ${yuklanmoqda ? 'yuklanyapti' : ''}`} onClick={hisobla} disabled={yuklanmoqda || tanlananSoni === 0}>
+  {yuklanmoqda ? '' : `🔢 Hisoblash (${tanlananSoni} material)`}
+</button>
       </div>
 
       {xato && <div className="xato">⚠️ {xato}</div>}
