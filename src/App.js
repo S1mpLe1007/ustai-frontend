@@ -10,7 +10,7 @@ const MATERIALLAR = [
   { id: 'pol', nom: 'Pol', icon: '🪵', endpoint: '/hisob/pol-qoplama' },
   { id: 'kraska', nom: 'Kraska', icon: '🪣', endpoint: '/hisob/suyuq-material' },
 ]; 
-
+ 
 const XONA_TURLARI = ['yotoq xona', 'mehmon xona', 'oshxona', 'vannaxona', 'bolalar xonasi'];
 const USLUBLAR = ['zamonaviy', 'klassik', 'minimalist', 'skandinaviya', 'industrial'];
 
