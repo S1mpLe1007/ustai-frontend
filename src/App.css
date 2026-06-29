@@ -364,6 +364,7 @@ body {
   position: relative;
   color: transparent;
   pointer-events: none;
+  min-height: 48px;
 }
 .hisobla-btn.yuklanyapti::after {
   content: '';
