@@ -206,6 +206,9 @@ const darkToggle = () => {
           UstAI
         </div>
         <span className="pro-badge">Professional</span>
+            <button className="dark-switch" onClick={darkToggle}>
+  {darkMode ? '☀️ Kunduz' : '🌙 Tun'}
+</button>
       </div>
 
       <div className="hero">
