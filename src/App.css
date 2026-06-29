@@ -563,3 +563,56 @@ body.dark .narx-input {
 }
 body.dark .dark-switch { border-color: #3a3a5e; color: #f0a500; }
 .dark-switch:hover { border-color: #1a2f4e; }
+/* ========== PROGRESS BAR ========== */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  gap: 0;
+}
+.progress-qadam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+.progress-qadam.aktiv { opacity: 1; }
+.progress-raqam {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #e0ddd8;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s;
+}
+.progress-qadam.aktiv .progress-raqam {
+  background: #f0a500;
+  color: #1a2f4e;
+}
+.progress-qadam span {
+  font-size: 11px;
+  color: #888;
+  font-weight: 500;
+}
+.progress-qadam.aktiv span { color: #1a2f4e; }
+.progress-chiziq {
+  flex: 1;
+  height: 2px;
+  background: #e0ddd8;
+  margin: 0 8px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+  max-width: 80px;
+}
+body.dark .progress-bar { background: #1a1a2e; border-color: #2a2a3e; }
+body.dark .progress-qadam.aktiv span { color: #e8e8e8; }
+body.dark .progress-chiziq { background: #2a2a3e; }
