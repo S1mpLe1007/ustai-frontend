@@ -77,6 +77,7 @@ body {
   background: rgba(255,255,255,0.08);
   white-space: nowrap;
 }
+.hero-chip { cursor: pointer; }
 .hero-chip.aktiv {
   background: #f0a500;
   color: #1a2f4e;
