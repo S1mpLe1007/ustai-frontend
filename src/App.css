@@ -501,3 +501,43 @@ body {
   background: #f0ede8;
   border-color: #1a2f4e;
 }
+/* ========== DARK MODE ========== */
+body.dark {
+  background: #0f1117;
+  color: #e8e8e8;
+}
+body.dark .topbar { background: #1a1a2e; border-color: #2a2a3e; }
+body.dark .logo { color: #f0a500; }
+body.dark .pro-badge { background: #2a2a3e; color: #f0a500; border-color: #3a3a5e; }
+body.dark .hero { background: #0d1b2e; }
+body.dark .karta { background: #1a1a2e; border-color: #2a2a3e; }
+body.dark .karta-sarlavha { color: #e8e8e8; }
+body.dark .input-group label { color: #aaa; }
+body.dark .input-group input, body.dark .input-group select { background: #2a2a3e; border-color: #3a3a5e; color: #e8e8e8; }
+body.dark .input-group input:focus, body.dark .input-group select:focus { background: #1a1a2e; border-color: #f0a500; }
+body.dark .mat-tugma { background: #2a2a3e; border-color: #3a3a5e; }
+body.dark .mat-nom { color: #aaa; }
+body.dark .natija-karta { background: #1a1a2e; border-color: #2a2a3e; }
+body.dark .natija-karta-bosh { color: #e8e8e8; border-color: #2a2a3e; }
+body.dark .natija-kalit { color: #aaa; }
+body.dark .natija-qiymat { color: #e8e8e8; }
+body.dark .natija-qator { border-color: #2a2a3e; }
+body.dark .natija-narx { background: #2a2a3e; }
+body.dark .natija-narx b { color: #f0a500; }
+body.dark .nusxa-btn { border-color: #3a3a5e; color: #aaa; }
+body.dark .nusxa-btn:hover { background: #2a2a3e; }
+body.dark .xato { background: #2a1a1a; border-color: #dc2626; }
+
+/* Dark mode switch */
+.dark-switch {
+  background: none;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #1a2f4e;
+}
+body.dark .dark-switch { border-color: #3a3a5e; color: #f0a500; }
+.dark-switch:hover { border-color: #1a2f4e; }
