@@ -35,13 +35,19 @@ const SKIP = ['list_narxi', 'ud_profil_narxi', 'cd_profil_narxi', 'laminat_narxi
 
 function NatijaKarta({ material, natija }) {
   const [nusxalandi, setNusxalandi] = useState(false);
+  const [narx, setNarx] = useState(natija.birlik_narxi || 0);
+
+  const jami = () => {
+    const dona = natija.kerakli_dona || natija.kerakli_rulon || natija.kerakli_list || natija.kerakli_taxta || natija.kerakli_idish || 0;
+    return (dona * narx).toLocaleString('uz') + " so'm";
+  };
 
   const nusxaOl = () => {
     const matn = Object.entries(natija)
       .filter(([k]) => !SKIP.includes(k))
       .map(([k, v]) => `${KEY_MAP[k] || k}: ${v}`)
       .join('\n');
-    navigator.clipboard.writeText(`${material.nom}\n${matn}`);
+    navigator.clipboard.writeText(`${material.nom}\n${matn}\nJami: ${jami()}`);
     setNusxalandi(true);
     setTimeout(() => setNusxalandi(false), 2000);
   };
@@ -58,14 +64,20 @@ function NatijaKarta({ material, natija }) {
         </button>
       </div>
       {entries.map(([key, val]) => {
-        if (NARX.includes(key)) {
+        if (key === 'birlik_narxi') {
           return (
-            <div key={key} className="natija-narx">
-              <span>Jami narx</span>
-              <b>{String(val)}</b>
+            <div key={key} className="natija-qator">
+              <span className="natija-kalit">Birlik narxi</span>
+              <input
+                className="narx-input"
+                type="number"
+                value={narx}
+                onChange={e => setNarx(parseFloat(e.target.value) || 0)}
+              />
             </div>
           );
         }
+        if (NARX.includes(key)) return null;
         if (MUHIM.includes(key)) {
           return (
             <div key={key} className="natija-qator natija-muhim">
@@ -81,6 +93,10 @@ function NatijaKarta({ material, natija }) {
           </div>
         );
       })}
+      <div className="natija-narx">
+        <span>Jami narx</span>
+        <b>{jami()}</b>
+      </div>
     </div>
   );
 }
