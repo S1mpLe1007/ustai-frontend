@@ -460,3 +460,28 @@ body {
 .hisobla-btn, .ai-btn, .pdf-btn, .mat-tugma {
   transition: all 0.18s ease;
 }
+/* ========== SKELETON LOADER ========== */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e8e4df 25%, #f0ede8 50%, #e8e4df 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 10px;
+}
+
+.skeleton-karta {
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+}
+
+.skeleton-title { height: 16px; width: 60%; margin-bottom: 16px; }
+.skeleton-qator { height: 12px; width: 100%; margin-bottom: 10px; }
+.skeleton-qator.kalta { width: 70%; }
+.skeleton-muhim { height: 36px; width: 100%; margin-top: 8px; border-radius: 7px; }
