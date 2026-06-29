@@ -539,5 +539,27 @@ body.dark .xato { background: #2a1a1a; border-color: #dc2626; }
   transition: all 0.15s;
   color: #1a2f4e;
 }
+/* NARX INPUT */
+.narx-input {
+  background: #f7f5f2;
+  border: 0.5px solid #f0a500;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  width: 120px;
+  text-align: right;
+  outline: none;
+}
+.narx-input:focus {
+  border-color: #1a2f4e;
+  background: #fff;
+}
+body.dark .narx-input {
+  background: #2a2a3e;
+  border-color: #f0a500;
+  color: #e8e8e8;
+}
 body.dark .dark-switch { border-color: #3a3a5e; color: #f0a500; }
 .dark-switch:hover { border-color: #1a2f4e; }
