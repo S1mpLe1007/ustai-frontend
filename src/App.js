@@ -177,7 +177,11 @@ const darkToggle = () => {
   setDarkMode(!darkMode);
   document.body.classList.toggle('dark');
 };
-  const xonaOzgartir = e => setXona({ ...xona, [e.target.name]: parseFloat(e.target.value) || 0 });
+ // YANGI:
+const xonaOzgartir = e => {
+  const val = e.target.value;
+  setXona({ ...xona, [e.target.name]: val === '' ? '' : (parseFloat(val) || 0) });
+};
   const materialTanla = id => setTanlangan({ ...tanlangan, [id]: !tanlangan[id] });
 
   const hisobla = async () => {
